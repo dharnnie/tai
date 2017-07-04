@@ -24,6 +24,7 @@ func serve() {
 
 	myMux := mux.NewRouter()
 	myMux.HandleFunc("/", handlers.Home)
+	myMux.HandleFunc("/about", handlers.About)
 
 	http.Handle("/", myMux)
 	err := http.ListenAndServe(":"+port, nil)

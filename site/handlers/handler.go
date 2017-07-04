@@ -21,3 +21,13 @@ func Home(w http.ResponseWriter, r *http.Request) {
 	}
 	t.Execute(w, nil)
 }
+
+// About Serves the about page
+func About(w http.ResponseWriter, r *http.Request) {
+	t, err := template.ParseFiles("templates/about.html")
+	if err != nil {
+		log.Println("Could not parse About tpl")
+		return
+	}
+	t.Execute(w, nil)
+}
