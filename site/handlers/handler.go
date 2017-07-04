@@ -16,7 +16,7 @@ func ServeResource(w http.ResponseWriter, r *http.Request) {
 func Home(w http.ResponseWriter, r *http.Request) {
 	t, err := template.ParseFiles("templates/index-slider.html")
 	if err != nil {
-		log.Println("Could not parse Home tpl")
+		log.Println("Could not parse Home tpl", err)
 		return
 	}
 	t.Execute(w, nil)
@@ -26,7 +26,7 @@ func Home(w http.ResponseWriter, r *http.Request) {
 func About(w http.ResponseWriter, r *http.Request) {
 	t, err := template.ParseFiles("templates/about.html")
 	if err != nil {
-		log.Println("Could not parse About tpl")
+		log.Println("Could not parse About tpl", err)
 		return
 	}
 	t.Execute(w, nil)
